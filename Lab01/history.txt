@@ -1,0 +1,235 @@
+date --iso-8601=seconds
+uname -a
+sudo apt-get update
+sudo apt-get install -y --only-upgrade vim
+cat /etc/apt/sources.list.d/ubuntu.sources
+sudo apt-get install -y vim
+cd ~
+cd ~/AK2/Lab01/commands/Downloads
+man ls
+ls -la
+apt-get download hello
+dpkg -i hello_*.deb
+sudo dpkg -i hello_*.deb
+cd /
+sudo -i
+echo hi all
+echo "$PWD hi all here!"
+cd ~/AK2/Lab01/commands
+touch hi.sh
+echo "$PATH"
+vi -es hi.sh <<'EDIT'
+insert
+#!/usr/bin/env bash
+echo "hi ${1:-all}"
+.
+write
+quit
+EDIT
+
+./hi.sh
+chmod a+x hi.sh
+chmod 777 hi.sh
+./hi.sh
+./hi.sh Ukraine
+mkdir scripts
+cp hi.sh scripts/
+cp scripts Documents/
+cp -r scripts Documents/
+cd scripts
+mv hi.sh ../hello-copy.sh
+cd ..
+rm Documents/scripts
+rm -r Documents/scripts
+cd /bin
+ls -l
+cd ../..
+cd ~/AK2/Lab01/commands
+tar -czvf scripts.tar.gz scripts
+cat hi.sh
+cat /var/log/apt/history.log
+tail -n 20 /var/log/apt/history.log
+less /var/log/apt/history.log
+cd /
+find / -xdev -name dhcp 2>/dev/null
+find / -xdev -iname '*dhcp*' 2>/dev/null
+find / -xdev -iname '*dhcp*' 2>/dev/null | grep -i --color=always dhcp
+find / -xdev -iname '*dhcp*' 2>/dev/null | grep -i --color=always etc
+cd ~/AK2/Lab01/commands
+ping -c 3 google.com
+ping -i 2 -c 300 google.com > ping.log 2>&1 &
+ping_job=$!
+echo "$ping_job" > ping.pid
+date
+sudo ping -i 7.3 -c 100 google.com > root-ping.log 2>&1 &
+root_job=$!
+echo "$root_job" > root-ping.pid
+python3 -c 'import wave; w=wave.open("silence.wav","wb"); w.setparams((1,2,8000,8000,"NONE","not compressed")); w.writeframes(bytes(16000)); w.close()'
+vlc -I dummy --no-video --aout=dummy --loop silence.wav > vlc.log 2>&1 &
+vlc_job=$!
+echo "$vlc_job" > vlc.pid
+ls -l
+cd /bin
+ls
+echo "$PATH"
+set
+whoami
+cd /etc
+ls
+cd ..
+cd lib
+ls
+dmesg
+sudo dmesg
+ls -l /dev
+sudo dmesg > ~/AK2/Lab01/commands/kernel-before-clear.log
+sudo dmesg -C
+sudo dmesg
+lsusb
+df -hT
+cd /home
+ls -l
+lsmod
+cd /proc
+cat cpuinfo
+cat /proc/sys/net/ipv4/ip_forward
+echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo -i
+cd ~
+cd ~/AK2/Lab01/commands
+echo vika > 1.txt
+cat 1.txt
+echo vasya > 2.txt
+cat 2.txt
+diff 1.txt 2.txt
+history
+lspci
+history -w history.txt
+date --iso-8601=seconds
+wc -l history.txt
+history -w history.txt
+kill -TERM "$ping_job"
+kill -TERM "$root_job"
+sudo kill -TERM "$root_job"
+kill -TERM "$vlc_job"
+jobs -l
+history -w history.txt
+date --iso-8601=seconds
+uname -a
+sudo apt-get update
+sudo apt-get install -y --only-upgrade vim
+cat /etc/apt/sources.list.d/ubuntu.sources
+sudo apt-get install -y vim
+cd ~
+cd ~/AK2/Lab01/commands/Downloads
+man ls
+ls -la
+apt-get download hello
+dpkg -i hello_*.deb
+sudo dpkg -i hello_*.deb
+cd /
+sudo -i
+echo hi all
+echo "$PWD hi all here!"
+cd ~/AK2/Lab01/commands
+touch hi.sh
+echo "$PATH"
+vi -es hi.sh <<'EDIT'
+insert
+#!/usr/bin/env bash
+echo "hi ${1:-all}"
+.
+write
+quit
+EDIT
+
+./hi.sh
+chmod a+x hi.sh
+chmod 777 hi.sh
+./hi.sh
+./hi.sh Ukraine
+mkdir scripts
+cp hi.sh scripts/
+cp scripts Documents/
+cp -r scripts Documents/
+cd scripts
+mv hi.sh ../hello-copy.sh
+cd ..
+rm Documents/scripts
+rm -r Documents/scripts
+cd /bin
+ls -l
+cd ../..
+cd ~/AK2/Lab01/commands
+tar -czvf scripts.tar.gz scripts
+cat hi.sh
+cat /var/log/apt/history.log
+tail -n 20 /var/log/apt/history.log
+less /var/log/apt/history.log
+cd /
+find / -xdev -name dhcp 2>/dev/null
+find / -xdev -iname '*dhcp*' 2>/dev/null
+find / -xdev -iname '*dhcp*' 2>/dev/null | grep -i --color=always dhcp
+find / -xdev -iname '*dhcp*' 2>/dev/null | grep -i --color=always etc
+cd ~/AK2/Lab01/commands
+ping -c 3 google.com
+ping -i 2 -c 300 google.com > ping.log 2>&1 &
+ping_job=$!
+echo "$ping_job" > ping.pid
+date
+sudo ping -i 7.3 -c 100 google.com > root-ping.log 2>&1 &
+root_job=$!
+echo "$root_job" > root-ping.pid
+python3 -c 'import wave; w=wave.open("silence.wav","wb"); w.setparams((1,2,8000,8000,"NONE","not compressed")); w.writeframes(bytes(16000)); w.close()'
+vlc -I dummy --no-video --aout=dummy --loop silence.wav > vlc.log 2>&1 &
+vlc_job=$!
+echo "$vlc_job" > vlc.pid
+ls -l
+cd /bin
+ls
+echo "$PATH"
+set
+whoami
+cd /etc
+ls
+cd ..
+cd lib
+ls
+dmesg
+sudo dmesg
+ls -l /dev
+sudo dmesg > ~/AK2/Lab01/commands/kernel-before-clear.log
+sudo dmesg -C
+sudo dmesg
+lsusb
+df -hT
+cd /home
+ls -l
+lsmod
+cd /proc
+cat cpuinfo
+cat /proc/sys/net/ipv4/ip_forward
+echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo -i
+cd ~
+cd ~/AK2/Lab01/commands
+echo vika > 1.txt
+cat 1.txt
+echo vasya > 2.txt
+cat 2.txt
+diff 1.txt 2.txt
+history
+lspci
+history -w history.txt
+date --iso-8601=seconds
+wc -l history.txt
+history -w history.txt
+kill -TERM "$ping_job"
+kill -TERM "$root_job"
+sudo kill -TERM "$root_job"
+kill -TERM "$vlc_job"
+jobs -l
+history -w history.txt
+exit

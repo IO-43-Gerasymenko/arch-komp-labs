@@ -1,0 +1,41 @@
+date --iso-8601=seconds
+fg
+ping -i 2.1 -c 100 google.com > ping2.log 2>&1 &
+user_ping=$!
+fg %1
+bg %1
+sudo sh -c 'echo $$ > /srv/ak2/Lab01/commands/root-ping2.pid; exec ping -i 8.1 -c 100 google.com' > root-ping2.log 2>&1 &
+root_ping=$(cat root-ping2.pid)
+ps -eo user,pid,ppid,lstart,stat,time,args | grep '[p]ing -i'
+kill -TERM "$user_ping"
+ps -eo user,pid,ppid,stat,time,args | grep '[p]ing -i'
+kill -TERM "$root_ping"
+sudo kill -KILL "$root_ping"
+vlc -I dummy --no-video --aout=dummy --loop silence.wav > vlc2.log 2>&1 &
+player=$!
+ps -p "$player" -o user,pid,stat,args
+sudo kill -TERM "$player"
+jobs -l
+date --iso-8601=seconds
+history -w history2.txt
+date --iso-8601=seconds
+fg
+ping -i 2.1 -c 100 google.com > ping2.log 2>&1 &
+user_ping=$!
+fg %1
+bg %1
+sudo sh -c 'echo $$ > /srv/ak2/Lab01/commands/root-ping2.pid; exec ping -i 8.1 -c 100 google.com' > root-ping2.log 2>&1 &
+root_ping=$(cat root-ping2.pid)
+ps -eo user,pid,ppid,lstart,stat,time,args | grep '[p]ing -i'
+kill -TERM "$user_ping"
+ps -eo user,pid,ppid,stat,time,args | grep '[p]ing -i'
+kill -TERM "$root_ping"
+sudo kill -KILL "$root_ping"
+vlc -I dummy --no-video --aout=dummy --loop silence.wav > vlc2.log 2>&1 &
+player=$!
+ps -p "$player" -o user,pid,stat,args
+sudo kill -TERM "$player"
+jobs -l
+date --iso-8601=seconds
+history -w history2.txt
+exit
